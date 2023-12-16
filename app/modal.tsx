@@ -1,16 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, Pressable, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import AddWorkoutForm, { WorkoutData } from '../components/AddWorkout';
+import { useState } from 'react';
 
+
+function handleSubmit(data: WorkoutData) {
+  return console.log(data);
+}
 export default function ModalScreen() {
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/modal.tsx" />
-
+      <AddWorkoutForm onSubmit={handleSubmit}/>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
