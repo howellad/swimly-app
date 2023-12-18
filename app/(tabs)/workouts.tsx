@@ -8,7 +8,10 @@ export default function WorkoutTabScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Workouts</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/workouts.tsx" />
+      <Text style={styles.text}>
+        Loading the latest swim workout here for the past week
+      </Text>
+      
     </View>
   );
 }
@@ -28,4 +31,8 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold"
+  }
 });

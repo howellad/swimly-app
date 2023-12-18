@@ -29,62 +29,65 @@ export default function AddWorkoutForm({ onSubmit }: WorkoutFormProps) {
     const [modalVisible, setModalVisible] = React.useState(false);
 
     return (
-        <SafeAreaView style={styles.container}>
-            <View>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeText}
-                    placeholder="Workout Name"
-                    value={text}
-                />
-                <RNDateTimePicker
-                    mode="date"
-                    //style={styles.input}
-                    //onChange={setDate}
-                    value={new Date()}
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={number}
-                    placeholder="Distance"
-                    keyboardType="numeric"
-                />
-                <Button
-                    onPress={() => setModalVisible(!modalVisible)}
-                    title="Learn More"
-                    color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
-                />
-            </View>
+        <SafeAreaView style={styles.inputContainer}>
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeText}
+                placeholder="Workout Name"
+                value={text}
+                keyboardType="default"
+            />
+
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeNumber}
+                value={number}
+                placeholder="Distance"
+                keyboardType="numeric"
+            />
+            <RNDateTimePicker
+                mode="date"
+                style={styles.input}
+                //onChange={setDate}
+                value={new Date()}
+            />
+            <Pressable style={styles.button} >
+                <Text  >Submit</Text>
+            </Pressable>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
+
+    inputContainer: {
         flex: 1,
-        justifyContent: 'center',
-        marginHorizontal: 16,
-    },
-    title: {
-        textAlign: 'center',
-        marginVertical: 8,
-    },
-    fixToText: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    separator: {
-        marginVertical: 8,
-        borderBottomColor: '#737373',
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        alignItems: 'center',
+        justifyContent: "flex-start",
+        width: "100%",
+        padding: 25
     },
     input: {
-        flexWrap: "wrap",
-        height: 50,
-        margin: 12,
+        height: 45,
+        borderColor: '#CCCCCC',
         borderWidth: 1,
-        padding: 10,
+        borderRadius: 20,
+        paddingHorizontal: 10,
+        marginBottom: 10,
+        width: '100%'
     },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 20,
+        elevation: 3,
+        backgroundColor: '#aaffee',
+        width: "100%"
+    },
+    label: {
+        paddingBottom:6,
+        fontSize:16,
+    }
 });
