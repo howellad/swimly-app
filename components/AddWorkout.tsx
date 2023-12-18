@@ -16,7 +16,7 @@ export interface WorkoutData {
     date: Date;
 }
 
-export default function AddWorkoutForm({ onSubmit }: WorkoutFormProps) {
+export default function AddWorkoutFormComponent({ onSubmit }: WorkoutFormProps) {
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     const setDate = (event: DateTimePickerEvent, date: Date) => {
