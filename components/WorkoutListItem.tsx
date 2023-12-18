@@ -1,21 +1,32 @@
 // WorkoutListItem.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface WorkoutListItemProps {
+  id: number;
   name: string;
   date: string;
   distance: string;
 }
 
-const WorkoutListItem: React.FC<WorkoutListItemProps> = ({ name, date, distance }) => {
+const handleDetailsPress = () => {
+  // do something here to navigate to the screen with id and get the whole details of the workout
+  // Navigate to the workout details screen, replace 'WorkoutDetailsScreen' with your actual screen name
+  //navigation.navigate('WorkoutDetailsScreen', { workoutId: name });
+};
+
+const WorkoutListItem: React.FC<WorkoutListItemProps> = ({ id, name, date, distance }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.infoContainer}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.date}>{date}</Text>
-        <Text style={styles.distance}>{distance}</Text>
-      </View>
+      <TouchableOpacity onPress={handleDetailsPress}>
+        <View style={styles.infoContainer}>
+          <Text>{id}</Text>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.date}>{date}</Text>
+          <Text style={styles.distance}>{distance}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
