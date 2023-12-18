@@ -25,15 +25,6 @@ export default function AddWorkoutFormComponent() {
             nativeEvent: { timestamp, utcOffset },
         } = event;
     };
-
-    const [modalVisible, setModalVisible] = React.useState(false);
-
-    const handleSubmission = () => {
-      // Handle your form submission logic here
-      console.log("closing modal");
-      // Close the modal
-      setModalVisible(false);  
-    };
     return (
         <SafeAreaView style={styles.inputContainer}>
             <TextInput
@@ -57,7 +48,7 @@ export default function AddWorkoutFormComponent() {
                 //onChange={setDate}
                 value={new Date()}
             />
-            <TouchableOpacity style={styles.button} onPress={handleSubmission}>
+            <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText} >Submit</Text>
             </TouchableOpacity>
         </SafeAreaView>
