@@ -7,9 +7,7 @@ import WorkoutList from '../../components/WorkoutList';
 export default function WorkoutTabScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
-        <WorkoutList></WorkoutList>
-      </Text>
+      <WorkoutList></WorkoutList>
     </View>
   );
 }

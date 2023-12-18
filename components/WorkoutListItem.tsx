@@ -34,12 +34,15 @@ const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
     borderBottomColor: '#CCCCCC',
-    paddingVertical: 10,
+    paddingVertical: 12,
   },
   infoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingLeft: 12,
+    paddingRight: 12,
+    width: "100%"
   },
   name: {
     fontSize: 16,
