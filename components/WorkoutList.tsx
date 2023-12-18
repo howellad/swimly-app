@@ -11,7 +11,7 @@ const WorkoutList: React.FC = () => {
   ];
 
   const renderItem = ({ item }) => (
-    <WorkoutListItem name={item.name} date={item.date} distance={item.distance} />
+    <WorkoutListItem id={item.id} name={item.name} date={item.date} distance={item.distance} />
   );
 
   return (

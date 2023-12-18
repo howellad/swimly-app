@@ -21,7 +21,6 @@ const WorkoutListItem: React.FC<WorkoutListItemProps> = ({ id, name, date, dista
     <View style={styles.container}>
       <TouchableOpacity onPress={handleDetailsPress}>
         <View style={styles.infoContainer}>
-          <Text>{id}</Text>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.date}>{date}</Text>
           <Text style={styles.distance}>{distance}</Text>
