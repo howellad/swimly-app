@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, Pressable, StyleSheet } from 'react-native';
+import { Platform, Pressable, StyleSheet, TouchableOpacity } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -8,13 +8,13 @@ import { useState } from 'react';
 
 
 function handleSubmit(data: WorkoutData) {
+
   return console.log(data);
 }
 export default function ModalScreen() {
-
   return (
     <View style={styles.container}>
-      <AddWorkoutForm onSubmit={handleSubmit} />
+      <AddWorkoutForm  />
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
@@ -37,5 +37,5 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
-  },
+  }
 });

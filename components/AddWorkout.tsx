@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button, ButtonProps, Pressable, StyleSheet } from 'react-native';
+import { Alert, Button, ButtonProps, Modal, Pressable, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, View } from './Themed';
 import { TextInput } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,7 +7,7 @@ import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/dat
 import RNDateTimePicker from '@react-native-community/datetimepicker';
 
 interface WorkoutFormProps {
-    onSubmit: (data: WorkoutData) => void;
+
 }
 
 export interface WorkoutData {
@@ -16,7 +16,7 @@ export interface WorkoutData {
     date: Date;
 }
 
-export default function AddWorkoutFormComponent({ onSubmit }: WorkoutFormProps) {
+export default function AddWorkoutFormComponent() {
     const [text, onChangeText] = React.useState('');
     const [number, onChangeNumber] = React.useState('');
     const setDate = (event: DateTimePickerEvent, date: Date) => {
@@ -28,6 +28,12 @@ export default function AddWorkoutFormComponent({ onSubmit }: WorkoutFormProps) 
 
     const [modalVisible, setModalVisible] = React.useState(false);
 
+    const handleSubmission = () => {
+      // Handle your form submission logic here
+      console.log("closing modal");
+      // Close the modal
+      setModalVisible(false);  
+    };
     return (
         <SafeAreaView style={styles.inputContainer}>
             <TextInput
@@ -51,9 +57,9 @@ export default function AddWorkoutFormComponent({ onSubmit }: WorkoutFormProps) 
                 //onChange={setDate}
                 value={new Date()}
             />
-            <Pressable style={styles.button} >
-                <Text  >Submit</Text>
-            </Pressable>
+            <TouchableOpacity style={styles.button} onPress={handleSubmission}>
+                <Text style={styles.buttonText} >Submit</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "flex-start",
         width: "100%",
-        padding: 25
+        padding: 25,
     },
     input: {
         height: 45,
@@ -76,6 +82,10 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         width: '100%'
     },
+    label: {
+        paddingBottom: 6,
+        fontSize: 16,
+    },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -83,11 +93,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         borderRadius: 20,
         elevation: 3,
-        backgroundColor: '#aaffee',
+        backgroundColor: 'black',
         width: "100%"
-    },
-    label: {
-        paddingBottom:6,
-        fontSize:16,
-    }
+      },
+      buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+      }
 });

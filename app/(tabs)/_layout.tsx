@@ -16,7 +16,9 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+  const handleNavigateToWorkoutEntry = () => {
+    // Navigate to the WorkoutEntryScreen
+  };
   return (
     <Tabs
       screenOptions={{
@@ -35,19 +37,17 @@ export default function TabLayout() {
           title: 'Workouts',
           tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild >
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="plus"
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
+            <Pressable onPress={handleNavigateToWorkoutEntry}>
+              {({ pressed }) => (
+                <FontAwesome
+                  name="plus"
+                  size={25}
+                  color={Colors[colorScheme ?? 'light'].text}
+                  style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                />
+              )}
+            </Pressable>
+          )
         }}
       />
       <Tabs.Screen
