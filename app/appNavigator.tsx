@@ -6,16 +6,18 @@ import WorkoutEntryScreen from './addworkoutscreen';
 import TabOneScreen from './(tabs)';
 import WorkoutTabScreen from './(tabs)/workouts';
 import ProfileScreen from './(tabs)/profile';
+import EditProfileScreen from './editprofilescreen';
 
 const AppNavigator = createStackNavigator(
   {
     Home: TabLayout,
     AddWorkout: WorkoutEntryScreen,
     Workouts: WorkoutTabScreen,
-    Profile: ProfileScreen
+    Profile: ProfileScreen,
+    EditProfile: EditProfileScreen,
   },
   {
-    initialRouteName: 'AddWorkout',
+    initialRouteName: 'Home',
   }
 );
 

@@ -5,10 +5,6 @@ import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-nat
 import { NavigationStackProp } from 'react-navigation-stack';
 import WorkoutTabScreen from './(tabs)/workouts';
 
-type Props = {
-  nav: NavigationStackProp;
-}
-
 export default function WorkoutEntryScreen() {
   const [workoutName, setWorkoutName] = React.useState('');
   const [date, setDate] = React.useState('');

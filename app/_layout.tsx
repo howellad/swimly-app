@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { Modal, useColorScheme } from 'react-native';
+import { HeaderStyleInterpolators } from 'react-navigation-stack';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -50,6 +51,9 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }}  />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }}  />
+        <Stack.Screen name="addworkoutscreen" options={{title: 'Add Workout'}}/>
+        <Stack.Screen name="editprofilescreen" options={{title: 'Edit Profile'}}/>
+
       </Stack>
     </ThemeProvider>
   );
