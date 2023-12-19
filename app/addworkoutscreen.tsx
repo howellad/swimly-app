@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
 
-const WorkoutEntryScreen: React.FC = () => {
+export default function WorkoutEntryScreen() {
   const [workoutName, setWorkoutName] = React.useState('');
   const [date, setDate] = React.useState('');
   const [duration, setDuration] = React.useState('');
@@ -20,7 +20,6 @@ const WorkoutEntryScreen: React.FC = () => {
       caloriesBurned,
       notes,
     });
-
     // Optionally, navigate to a different screen or perform other actions
   };
 
@@ -109,5 +108,3 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
 });
-
-export default WorkoutEntryScreen;

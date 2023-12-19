@@ -1,14 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, Pressable, StyleSheet, TouchableOpacity } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import AddWorkoutForm, { WorkoutData } from '../components/AddWorkout';
-import { useState } from 'react';
 
 
 function handleSubmit(data: WorkoutData) {
-
   return console.log(data);
 }
 export default function ModalScreen() {

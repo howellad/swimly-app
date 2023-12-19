@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
+import { Link } from 'expo-router';
 
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <EditScreenInfo path="app/(tabs)/profile.tsx" />
+      <Link href={'/addworkoutscreen'}>Add a workout</Link>
     </View>
   );
 }

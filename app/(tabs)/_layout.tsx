@@ -37,16 +37,14 @@ export default function TabLayout() {
           title: 'Workouts',
           tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
           headerRight: () => (
-            <Pressable onPress={handleNavigateToWorkoutEntry}>
-              {({ pressed }) => (
+            <Link href={'/addworkoutscreen'}>
                 <FontAwesome
                   name="plus"
                   size={25}
                   color={Colors[colorScheme ?? 'light'].text}
-                  style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                  style={{ marginRight: 15, opacity: 1 }}
                 />
-              )}
-            </Pressable>
+            </Link>
           )
         }}
       />
