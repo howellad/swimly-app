@@ -37,12 +37,12 @@ export default function TabLayout() {
           title: 'Workouts',
           tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
           headerRight: () => (
-            <Link href={'/addworkoutscreen'}>
+            <Link href={'/addworkoutscreen'} style={{paddingRight: 5 }} >
                 <FontAwesome
                   name="plus"
-                  size={25}
+                  size={30}
                   color={Colors[colorScheme ?? 'light'].text}
-                  style={{ marginRight: 15, opacity: 1 }}
+                  style={{ marginRight: 15, opacity: 1, paddingRight: 5 }}
                 />
             </Link>
           )
