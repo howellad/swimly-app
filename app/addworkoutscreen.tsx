@@ -1,6 +1,13 @@
 // WorkoutEntryScreen.tsx
+import { useNavigation } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
+import { NavigationStackProp } from 'react-navigation-stack';
+import WorkoutTabScreen from './(tabs)/workouts';
+
+type Props = {
+  nav: NavigationStackProp;
+}
 
 export default function WorkoutEntryScreen() {
   const [workoutName, setWorkoutName] = React.useState('');
@@ -9,6 +16,7 @@ export default function WorkoutEntryScreen() {
   const [distance, setDistance] = React.useState('');
   const [caloriesBurned, setCaloriesBurned] = React.useState('');
   const [notes, setNotes] = React.useState('');
+  const navigation = useNavigation<NavigationStackProp>();
 
   const handleSaveWorkout = () => {
     // Handle saving the workout data
@@ -21,6 +29,7 @@ export default function WorkoutEntryScreen() {
       notes,
     });
     // Optionally, navigate to a different screen or perform other actions
+    navigation.navigate("workouts");
   };
 
   return (
@@ -99,7 +108,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     marginBottom: 5,
-  }, 
+  },
   input: {
     height: 40,
     borderColor: '#CCCCCC',
