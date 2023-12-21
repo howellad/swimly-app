@@ -53,7 +53,8 @@ function RootLayoutNav() {
         <Stack.Screen name="modal" options={{ presentation: 'modal' }}  />
         <Stack.Screen name="addworkoutscreen" options={{title: 'Add Workout'}}/>
         <Stack.Screen name="editprofilescreen" options={{title: 'Edit Profile'}}/>
-
+        <Stack.Screen name="workoutdetailsscreen" options={{title: 'Workout'}}/>
+        <Stack.Screen name="editworkoutscreen" options={{title: 'Edit Workout'}}/>
       </Stack>
     </ThemeProvider>
   );
